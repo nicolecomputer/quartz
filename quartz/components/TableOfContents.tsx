@@ -50,7 +50,7 @@ const TableOfContents: QuartzComponent = ({
         </svg>
       </button>
       <div id="toc-content" class={fileData.collapseToc ? "collapsed" : ""}>
-        <ul class="overflow">
+        <ul class="">
           {fileData.toc.map((tocEntry) => (
             <li key={tocEntry.slug} class={`depth-${tocEntry.depth}`}>
               <a href={`#${tocEntry.slug}`} data-for={tocEntry.slug}>
