@@ -13,8 +13,7 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "tinylytics",
-      siteId: "qT1UVkLbh3vdHyQynNps",
+      provider: "plausible",
     },
     locale: "en-US",
     baseUrl: "notes.nicole.computer",
