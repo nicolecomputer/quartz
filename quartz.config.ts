@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: {
       provider: "tinylytics",
-      siteId: "1879",
+      siteId: "qT1UVkLbh3vdHyQynNps",
     },
     locale: "en-US",
     baseUrl: "notes.nicole.computer",
