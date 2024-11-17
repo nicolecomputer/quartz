@@ -14,6 +14,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: {
       provider: "plausible",
+      host: "https://lively-dew-5ace.nicole-bda.workers.dev"
     },
     locale: "en-US",
     baseUrl: "notes.nicole.computer",
