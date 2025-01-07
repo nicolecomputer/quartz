@@ -20,16 +20,19 @@ import { FolderContent } from "../../components"
 import { write } from "./helpers"
 import { i18n } from "../../i18n"
 import DepGraph from "../../depgraph"
+import { defaultFolderPageLayout } from "../../../quartz.layout"
 
 interface FolderPageOptions extends FullPageLayout {
   sort?: (f1: QuartzPluginData, f2: QuartzPluginData) => number
+  showFolderCount?: boolean
 }
 
 export const FolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>> = (userOpts) => {
   const opts: FullPageLayout = {
     ...sharedPageComponents,
     ...defaultListPageLayout,
-    pageBody: FolderContent({ sort: userOpts?.sort }),
+    ...defaultFolderPageLayout,
+    pageBody: FolderContent({ sort: userOpts?.sort, showFolderCount: userOpts?.showFolderCount }),
     ...userOpts,
   }
 
@@ -78,8 +81,8 @@ export const FolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>> = (user
         allFiles.flatMap((data) => {
           return data.slug
             ? _getFolders(data.slug).filter(
-                (folderName) => folderName !== "." && folderName !== "tags",
-              )
+              (folderName) => folderName !== "." && folderName !== "tags",
+            )
             : []
         }),
       )
