@@ -20,6 +20,7 @@ const config: QuartzConfig = {
     baseUrl: "notes.nicole.computer",
     ignorePatterns: ["private", "templates", ".obsidian", "_templates"],
     defaultDateType: "created",
+    generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
