@@ -276,5 +276,41 @@ export function renderPage(
     </html>
   )
 
-  return "<!DOCTYPE html>\n" + render(doc)
+  const nicoleDoc = (
+    <html lang={lang}>
+      <Head {...componentData} />
+      <body data-slug={slug}>
+        <div id="nicole-quartz-root">
+          <Body {...componentData}>
+            <div class="page-header">
+              <Header {...componentData}>
+                {header.map((HeaderComponent) => (
+                  <HeaderComponent {...componentData} />
+                ))}
+              </Header>
+              <div class="popover-hint page-metadata">
+                {beforeBody.map((BodyComponent) => (
+                  <BodyComponent {...componentData} />
+                ))}
+              </div>
+            </div>
+            <div id="main-page-content">
+              <Content {...componentData} />
+            </div>
+            <div class="page-footer">
+              {afterBody.map((BodyComponent) => (
+                <BodyComponent {...componentData} />
+              ))}
+            </div>
+          </Body>
+          <Footer {...componentData} />
+        </div>
+      </body>
+      {pageResources.js
+        .filter((resource) => resource.loadTime === "afterDOMReady")
+        .map((res) => JSResourceToScriptElement(res))}
+    </html>
+  )
+
+  return "<!DOCTYPE html>\n" + render(nicoleDoc)
 }

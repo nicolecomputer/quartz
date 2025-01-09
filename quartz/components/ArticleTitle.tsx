@@ -1,5 +1,6 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
+import { NicoleArticleTitle } from "./custom-components/NicoleArticleTitle"
 
 const ArticleTitle: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const title = fileData.frontmatter?.title
@@ -16,4 +17,4 @@ ArticleTitle.css = `
 }
 `
 
-export default (() => ArticleTitle) satisfies QuartzComponentConstructor
+export default (() => NicoleArticleTitle) satisfies QuartzComponentConstructor

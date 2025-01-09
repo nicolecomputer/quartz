@@ -1,4 +1,5 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { NicoleHeader } from "./custom-components/NicoleHeader"
 
 const Header: QuartzComponent = ({ children }: QuartzComponentProps) => {
   return children.length > 0 ? <header>{children}</header> : null
@@ -19,4 +20,4 @@ header h1 {
 }
 `
 
-export default (() => Header) satisfies QuartzComponentConstructor
+export default (() => NicoleHeader) satisfies QuartzComponentConstructor

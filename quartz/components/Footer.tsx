@@ -3,6 +3,8 @@ import style from "./styles/footer.scss"
 import { version } from "../../package.json"
 import { i18n } from "../i18n"
 
+import { NicoleFooter } from "./custom-components/NicoleFooter"
+
 interface Options {
   links: Record<string, string>
 }
@@ -29,5 +31,5 @@ export default ((opts?: Options) => {
   }
 
   Footer.css = style
-  return Footer
+  return NicoleFooter
 }) satisfies QuartzComponentConstructor
