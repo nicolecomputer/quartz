@@ -18,24 +18,16 @@ NicoleArticleTitle.css = `
 .article-title-container {
     margin: 20px 0;
     position: relative;
-}
-
-.article-title-container:before {
-    content: '';
+    box-sizing: content-box;
+    left: -10px;
 
     background-color: #A86FC5;
     box-shadow: 4px 5px 0px rgba(0,0,0,0.10098039);
     border-radius: 5px;
 
-    z-index: -1;
-
-    position: absolute;
-    top: 0;
-    left: -5px;
-    right: 0px;
-    bottom: 0;
-
+    padding: 0 10px;
 }
+
 .new-article-title {
   color: white;
   padding-top: 8px;
