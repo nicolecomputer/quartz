@@ -9,6 +9,8 @@ import sharp from "sharp"
 import { ImageOptions, SocialImageOptions, getSatoriFont, defaultImage } from "../util/og"
 import { unescapeHTML } from "../util/escape"
 
+import { NicoleHead } from "./custom-components/NicoleHead"
+
 /**
  * Generates social image (OG/twitter standard) and saves it as `.webp` inside the public folder
  * @param opts options for generating image
@@ -205,5 +207,5 @@ export default (() => {
     )
   }
 
-  return Head
+  return NicoleHead
 }) satisfies QuartzComponentConstructor
